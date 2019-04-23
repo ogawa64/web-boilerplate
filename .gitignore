@@ -5,12 +5,12 @@
 *.log
 
 # node_modules
-node_modules
+node_modules/
 
 # production
 httpdocs/
 
 # src
-*.html
-*.css
+src/**/*.html
+src/**/*.css
 src/common/js/*.js
