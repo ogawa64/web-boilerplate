@@ -1,0 +1,14 @@
+{
+  "data": {
+		"root": "https://example.com/",
+    "sitename": "templete",
+		"favicon": "/favicon.ico",
+    "meta": {
+      "description": "default description",
+      "keywords": "default keywords"
+    },
+		"og": {
+			"image": "https://example.com/ogp.jpg"
+		}
+  }
+}

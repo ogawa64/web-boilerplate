@@ -1,0 +1,9 @@
+{
+	"source": ".src",
+	"description": "./doc",
+	"plugins": [
+		{
+			"name": "esdoc-standard-plugin"
+			}
+		]
+	}

@@ -1,0 +1,35 @@
+{%- extends "layout/_layout.njk" -%}
+{%- set category = 'category' -%}
+{% block TDK %}
+<title>★★★</title>
+<meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+<meta property="og:title" content="★★★">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:image" content="https://example.com/ogp.jpg">
+<meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+<meta name="twitter:card" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+<meta name="twitter:site" content="https://example.com/">
+<meta name="twitter:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+<meta name="twitter:image:src" content="https://example.com/tw.jpg">
+<link rel="alternate" hreflang="ja" href="https://example.com/">
+<link rel="alternate" hreflang="en" href="https://example.com/e/">
+{% endblock %}
+{% block headAsset %}
+	{%- include "include/_head-asset.njk" -%}
+{% endblock %}
+{% block body %}
+{%- include "include/_header.njk" -%}
+	<main class="{{ category }}">
+		<section>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		</section>
+		<section>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		</section>
+	</main>
+	<aside class=""></aside>
+{% endblock %}
+{%- block footer -%}
+	{%- include "include/_footer.njk" -%}
+{% endblock %}
