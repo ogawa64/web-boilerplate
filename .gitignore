@@ -1,7 +1,16 @@
+# mac
 .DS_store
 
+# log
+*.log
+
 # node_modules
-node_modules/
+node_modules
 
 # production
-/httpdocs/
+httpdocs/
+
+# src
+*.html
+*.css
+src/common/js/*.js
