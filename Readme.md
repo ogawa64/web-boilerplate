@@ -3,11 +3,11 @@
 プロジェクトに応じてカスタマイズして使用してください。
 
 # 更新
-# update | message | name
+update | message | name
 2019-0418 | init | S.Ogawa
 
 # 説明
-[/src]
+[src]
 開発用ディレクトリです。
 ローカルサーバのドキュメントルートディレクトリには、こちらを設定してください。
 
@@ -28,6 +28,9 @@ gitignoreファイルはGitが無視すべき意図的に追跡されていな�
 
 [.gitattribute](https://git-scm.com/docs/gitattributes)
 
-# node.js yarnのバージョン
+[.gulpfile.babel.js](https://gulpjs.com/docs/en/api/concepts)
+gulpの設定ファイルです。
+
+# version
 `node v10.15.3`
 `yarn 1.15.2`
