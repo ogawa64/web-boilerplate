@@ -11,11 +11,11 @@ import rename from 'gulp-rename';
 	* @param documentRoot ドキュメントルートディレクトリ ./src, ./httpdocs
  */
 const env = process.env.NODE_ENV;
-const dir = (()=>{
+const d = (()=>{
 	if(env === 'development') return './src/';
 	else if(env === 'production') return './httpdocs/';
 });
-const documentRoot = dir();
+const documentRoot = d();
 
 /**
  * @desc ejsをトランスパイルするタスク

@@ -1,16 +1,16 @@
 const path = require('path');
 const glob = require('glob');
 
-const entries = glob.sync('./src/common/js/entries/*.js');
+const entries = glob.sync('../src/common/js/entries/*.js');
 
 module.exports = (env, argv) => {
 	const mode = argv.mode; // "development" or "production"
-	const baseDir = (mode === 'production') ? '.\/httpdocs\/' : '.\/src\/';
+	const baseDir = (mode === 'production') ? '..\/httpdocs\/' : '..\/src\/';
 
 	return {
 		mode: argv.mode || 'production',
 		entry: {
-			index: path.resolve(__dirname, `./src/common/js/entries/`),
+			index: path.resolve(__dirname, `../src/common/js/entries/`),
 		},
 		output: {
 			path: path.resolve(__dirname, `${baseDir}common/js/`),

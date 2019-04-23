@@ -1,19 +1,23 @@
 {
   "name": "aq-html-boilerplate",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
+	"browserslist": [
+    "ie 11",
+    "iOS 10",
+    "Android 4"
+  ],
   "scripts": {
-    "dev:sass": "node-sass --source-map-embed -w src/common/css/ -r -o src/common/css/",
-    "dev:webpack": "webpack --mode development --watch",
-    "dev:server": "browser-sync start --config bs-config.js",
+    "dev:sass": "node-sass --source-map-embed --watch src/common/css/ -r -o src/common/css/",
+    "dev:webpack": "webpack --mode development --watch --config ./config/webpack.config.js",
+    "dev:server": "browser-sync start --config ./config/bs-config.js",
     "dev:ejs": "NODE_ENV=development gulp ejs",
     "dev:nunjucks": "NODE_ENV=development gulp nunjucks",
     "dev": "npm-run-all -p dev:*",
     "build:sass": "node-sass src/common/css/ -r -o httpdocs/common/css/",
-		"build:webpack": "webpack --mode production",
-		"build:nunjucks": "NODE_ENV=production gulp nunjucks",
-    "test": "echo 'test'"
+    "build:postcss": "postcss src/**/*.css --no-map --dir httpdocs --base src --config ./config/postcss.config.js",
+    "build:webpack": "webpack --mode production --config ./config/webpack.config.js",
+    "build:nunjucks": "NODE_ENV=production gulp nunjucks"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -22,6 +26,7 @@
     "babel-loader": "^8.0.5",
     "browser-sync": "^2.26.3",
     "core-js": "3",
+    "cssnano": "^4.1.10",
     "esdoc": "^1.1.0",
     "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^5.16.0",
@@ -33,6 +38,7 @@
     "gulp-rename": "^1.4.0",
     "npm-run-all": "^4.1.5",
     "path": "^0.12.7",
+    "postcss-cli": "^6.1.2",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0"
   },
