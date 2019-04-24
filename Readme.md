@@ -3,8 +3,8 @@
 プロジェクトに応じてカスタマイズして使用してください。
 
 # 更新
-update | message | name
-2019-0418 | init | S.Ogawa
+update | message | name  
+2019-0418 | init | S.Ogawa  
 
 # リポジトリ
 ***リポジトリのURL***
