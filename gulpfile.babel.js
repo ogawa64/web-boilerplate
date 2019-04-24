@@ -24,9 +24,9 @@ const documentRoot = d();
  */
 gulp.task('ejs', ()=>{
 	return gulp.src(['src/**/*.ejs','!./src/**/_*.ejs'])
-	.pipe(ejs({msg: 'transpiling ejs.....'})).on('error',(err)=>{if(err) throw err;})
-	.pipe(rename({ extname: '.html'} ))
-	.pipe(gulp.dest(documentRoot));
+		.pipe(ejs({msg: 'transpiling ejs.....'})).on('error',(err)=>{if(err) throw err;})
+		.pipe(rename({ extname: '.html'}))
+		.pipe(gulp.dest(documentRoot));
 });
 
 
@@ -35,14 +35,14 @@ gulp.task('ejs', ()=>{
  */
 gulp.task('nunjucks', ()=>{
 	return gulp.src(['./src/**/*.njk','!./src/**/_*.njk'])
-	.pipe(data(()=>{return require('./src/common/template/config/site.json');}))
-	.pipe(nunjucksRender({
-		path: ['src/common/template/'],
-		envOptions: {
-			autoescape: false
-		},
-	})).on('error',(err)=>{if(err) throw err;})
-	.pipe(gulp.dest(documentRoot));
+		.pipe(data(()=>{return require('./src/common/template/config/site.json');}))
+		.pipe(nunjucksRender({
+			path: ['src/common/template/'],
+			envOptions: {
+				autoescape: false
+			},
+		})).on('error',(err)=>{if(err) throw err;})
+		.pipe(gulp.dest(documentRoot));
 });
 
 /**
@@ -50,13 +50,13 @@ gulp.task('nunjucks', ()=>{
  */
 gulp.task('watch', ()=>{
 	gulp.watch('./src/**/*.njk', gulp.task('nunjucks'));
-})
+});
 
 /**
- * @desc httpdocsディレクトリを削除するタスク
+ * @desc httpdocsディレクトリの全ファイルを削除するタスク
  */
 gulp.task('crean-all', (cb)=>{
-	return del(['httpdocs/**/*'], cb)
+	return del(['httpdocs/**/*'], cb);
 });
 
 /**
@@ -71,12 +71,12 @@ gulp.task('crean-dev', (cb)=>{
 		'httpdocs/common/js/entries',
 		'httpdocs/common/js/module',
 	], cb);
-})
+});
 
 /**
  * @desc srcディレクトリの中身をhttpdocsディレクトリに複製するタスク
  */
 gulp.task('copy', (cb)=>{
 	return gulp.src('src/**/*',{base:'src'})
-	.pipe(gulp.dest('httpdocs/'), cb);
+		.pipe(gulp.dest('httpdocs/'), cb);
 });
