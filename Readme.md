@@ -10,8 +10,8 @@ update | message | name
 ***リポジトリのURL***
 
 # version
-`node v10.15.3`
-`yarn 1.15.2`
+`node v10.15.3`  
+`yarn 1.15.2`  
 
 # 開発コマンド
 予め" node.js "," yarn "をインストールしてください。  
