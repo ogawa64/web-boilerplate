@@ -8,7 +8,8 @@
     "Android 4"
   ],
   "scripts": {
-    "dev:sass": "node-sass --source-map-embed --watch src/common/css/scss -r -o src/common/css/",
+    "dev--comment:sass": "node-sass --source-map-embed --watch src/common/css/scss --recursive --output src/common/css/",
+    "dev:stylus": "stylus --sourcemap-inline -w src/common/css/scss --resolve-url --out src/common/css/",
     "dev:webpack": "webpack --mode development --watch --config ./config/webpack.config.js",
     "dev:server": "browser-sync start --config ./config/bs-config.js",
     "dev:watch": "gulp watch",
@@ -16,16 +17,18 @@
     "copy": "gulp copy",
     "crean-all": "gulp crean-all",
     "crean-dev": "gulp crean-dev",
-    "build:sass": "node-sass src/common/css/scss -r -o httpdocs/common/css/",
+    "build--comment:sass": "node-sass src/common/css/scss --recursive --output httpdocs/common/css/",
+    "build:stylus": "stylus src/common/css/scss --resolve-url --out httpdocs/common/css/",
     "build:postcss": "postcss src/**/*.css --no-map --dir httpdocs --base src --config ./config/postcss.config.js",
     "build:webpack": "webpack --mode production --config ./config/webpack.config.js",
     "build:nunjucks": "gulp nunjucks",
-    "build": "NODE_ENV=production npm-run-all copy build:nunjucks build:sass build:webpack crean-dev"
+    "build": "NODE_ENV=production npm-run-all copy build:nunjucks build:stylus build:webpack crean-dev"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "autoprefixer": "^9.5.1",
+    "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
     "browser-sync": "^2.26.3",
     "core-js": "3",

@@ -5,16 +5,16 @@ const entries = glob.sync('../src/common/js/entries/*.js');
 
 module.exports = (env, argv) => {
 	const mode = argv.mode; // "development" or "production"
-	const baseDir = (mode === 'production') ? '..\/httpdocs\/' : '..\/src\/';
+	const baseDir = (mode === 'production') ? '../httpdocs/' : '../src/';
 
 	return {
 		mode: argv.mode || 'production',
 		entry: {
-			index: path.resolve(__dirname, `../src/common/js/entries/`),
+			index: path.resolve(__dirname, '../src/common/js/entries/'),
 		},
 		output: {
 			path: path.resolve(__dirname, `${baseDir}common/js/`),
-			filename: '[name].js'
+			filename: '[name].bundle.js'
 		},
 		module: {
 			rules: [
