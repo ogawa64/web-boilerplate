@@ -8,9 +8,11 @@
 	{%- block headAsset -%}{%- endblock -%}
 </head>
 <body>
-	{% block header %}{% endblock %}
+	{%- block header -%}
+	<p>_layout.njk</p>
+	{%- endblock -%}
 	<div id="document-wrapper">
-	{% block body %}{% endblock %}
+	{%- block content -%}{%- endblock -%}
 	</div>
 	{%- block footer -%}{% endblock %}
 	{%- block bodyAsset -%}{%- endblock -%}
