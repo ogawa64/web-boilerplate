@@ -14,3 +14,6 @@ httpdocs/
 src/**/*.html
 src/**/*.css
 src/common/js/*.js
+
+# test
+coverage/
