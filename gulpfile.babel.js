@@ -67,7 +67,7 @@ gulp.task('crean-dev', (cb)=>{
 		'.htaccess',
 		'httpdocs/**/*.njk',
 		'httpdocs/common/template',
-		'httpdocs/common/css/scss',
+		'httpdocs/common/css/preprocessor',
 		'httpdocs/common/js/entries',
 		'httpdocs/common/js/module',
 	], cb);

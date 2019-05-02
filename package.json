@@ -8,8 +8,8 @@
     "Android 4"
   ],
   "scripts": {
-    "dev--comment:sass": "node-sass --source-map-embed --watch src/common/css/scss --recursive --output src/common/css/",
-    "dev:stylus": "stylus --sourcemap-inline -w src/common/css/scss --resolve-url --out src/common/css/",
+    "dev--comment:sass": "node-sass --source-map-embed --watch src/common/css/preprocessor --recursive --output src/common/css/",
+    "dev:stylus": "stylus --sourcemap-inline -w src/common/css/preprocessor --resolve-url --out src/common/css/",
     "dev:webpack": "webpack --mode development --watch --config ./config/webpack.config.js",
     "dev:server": "browser-sync start --config ./config/bs-config.js",
     "dev:watch": "gulp watch",
@@ -17,8 +17,8 @@
     "copy": "gulp copy",
     "crean-all": "gulp crean-all",
     "crean-dev": "gulp crean-dev",
-    "build--comment:sass": "node-sass src/common/css/scss --recursive --output httpdocs/common/css/",
-    "build:stylus": "stylus src/common/css/scss --resolve-url --out httpdocs/common/css/",
+    "build--comment:sass": "node-sass src/common/css/preprocessor --recursive --output httpdocs/common/css/",
+    "build:stylus": "stylus src/common/css/preprocessor --resolve-url --out httpdocs/common/css/",
     "build:postcss": "postcss src/**/*.css --no-map --dir httpdocs --base src --config ./config/postcss.config.js",
     "build:webpack": "webpack --mode production --config ./config/webpack.config.js",
     "build:nunjucks": "gulp nunjucks",
@@ -45,6 +45,7 @@
     "npm-run-all": "^4.1.5",
     "path": "^0.12.7",
     "postcss-cli": "^6.1.2",
+    "stylus": "^0.54.5",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0"
   },
