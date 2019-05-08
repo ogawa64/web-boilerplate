@@ -13,7 +13,9 @@
     "dev:webpack": "webpack --mode development --watch --config ./config/webpack.config.js",
     "dev:server": "browser-sync start --config ./config/bs-config.js",
     "dev:watch": "gulp watch",
-    "dev": "NODE_ENV=development npm-run-all --parallel dev:*",
+		"dev": "NODE_ENV=development npm-run-all --parallel dev:*",
+		"dev--env": "set NODE_ENV=development",
+		"dev--windows": "npm-run-all dev--env dev:server dev:stylus dev:webpack dev:watch",
     "copy": "gulp copy",
     "crean-all": "gulp crean-all",
     "crean-dev": "gulp crean-dev",
@@ -23,6 +25,8 @@
     "build:webpack": "webpack --mode production --config ./config/webpack.config.js",
     "build:nunjucks": "gulp nunjucks",
     "build": "NODE_ENV=production npm-run-all copy build:nunjucks build:stylus build:webpack crean-dev",
+		"build--env": "set NODE_ENV=production",
+		"build--windows": "npm-run-all build--env copy build:nunjucks build:stylus build:webpack crean-dev",
 		"test": "jest --coverage"
   },
   "devDependencies": {

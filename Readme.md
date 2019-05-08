@@ -24,10 +24,19 @@ update | message | name
 `yarn install`
 
 開発  
+mac
 `yarn dev`
 
+windows
+`yarn dev--windows`
+
+
 ビルド(サーバにアップするファイルを生成します)  
+mac
 `yarn build`
+
+windows
+`yarn build--windows`
 
 詳細は"package.json"をご確認ください。
 
