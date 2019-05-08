@@ -22,6 +22,7 @@ update | message | name
 
 初回(パッケージをインストールします)  
 `yarn install`
+`_httpdocs`ディレクトリを`httpdocs`にリネーム（git管理から外します。）
 
 開発  
 mac
