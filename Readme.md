@@ -20,28 +20,17 @@ update | message | name
 [yarn](https://yarnpkg.com/ja/docs/install#windows-stable)  
 
 
-初回(パッケージをインストールします)  
-`yarn install`
-`_httpdocs`ディレクトリを`httpdocs`にリネーム（git管理から外します。）
+初回のみ    
+`yarn install`  
+`_httpdocs`ディレクトリを`httpdocs`にリネーム（git管理から外します。）  
 
 開発  
-mac
-`yarn dev`
-
-windows
-`yarn dev--windows`
-
+`yarn dev`  
 
 ビルド(サーバにアップするファイルを生成します)  
-mac
-`yarn build`
+`yarn build`  
 
-windows
-`yarn build--windows`
-
-詳細は"package.json"をご確認ください。
-
-
+詳細は"package.json"をご確認ください。  
 
 
 # 説明  
