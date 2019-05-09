@@ -5,7 +5,7 @@ const entries = glob.sync('../src/common/js/entries/*.js');
 
 module.exports = (env, argv) => {
 	const mode = argv.mode; // "development" or "production"
-	const baseDir = (mode === 'production') ? '../httpdocs/' : '../src/';
+	const baseDir = (mode === 'production') ? '../htdocs/' : '../src/';
 
 	return {
 		mode: argv.mode || 'production',

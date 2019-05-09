@@ -22,7 +22,7 @@ update | message | name
 
 初回のみ    
 `yarn install`  
-`_httpdocs`ディレクトリを`httpdocs`にリネーム（git管理から外します。）  
+`_htdocs`ディレクトリを`htdocs`にリネーム（git管理から外します。）  
 
 開発  
 `yarn dev`  
@@ -34,12 +34,15 @@ update | message | name
 
 
 # 説明  
-[src]  
+src  
 開発用ディレクトリです。ローカルサーバのドキュメントルートディレクトリには、こちらを設定してください。
 
-[httpdocs]  
+htdocs  
 納品用ディレクトリです。`yarn build` コマンドでこのディレクトリに納品用ファイルが生成されます。
 FTPでサーバにあげる、.zipファイルで納品する場合はこちらのソースファイルを使用してください。
+
+macro  
+jsのマクロ用のディレクトリです。  
 
 [.editorconfig](https://editorconfig.org/)  
 EditorConfigは、さまざまなエディターやIDEにまたがって同じプロジェクトに取り組んでいる複数の開発者にとって、一貫したコーディングスタイルを維持するのに役立ちます。 EditorConfigプロジェクトは、コーディングスタイルを定義するためのファイルフォーマットと、エディタがファイルフォーマットを読み、定義されたスタイルを順守できるようにするテキストエディタプラグインのコレクションから構成されています。 EditorConfigファイルは読みやすく、バージョン管理システムとうまく機能します。
@@ -54,4 +57,7 @@ gitignoreファイルはGitが無視すべき意図的に追跡されていな�
 [.gitattribute](https://git-scm.com/docs/gitattributes)
 
 [.gulpfile.babel.js](https://gulpjs.com/docs/en/api/concepts)  
-gulpの設定ファイルです。
+gulpの設定ファイルです。  
+
+[package.json](http://liberty-technology.biz/PublicItems/npm/package.json.html)  
+各パッケージの依存関係やスクリプトを記載してあるJSONファイルです。

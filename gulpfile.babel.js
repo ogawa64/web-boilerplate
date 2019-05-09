@@ -10,12 +10,12 @@ import plumber from 'gulp-plumber';
 
 /**
 	* @param env 環境変数 development, production
-	* @param documentRoot ドキュメントルートディレクトリ ./src, ./httpdocs
+	* @param documentRoot ドキュメントルートディレクトリ ./src, ./htdocs
  */
 const env = process.env.NODE_ENV;
 const d = (()=>{
 	if(env === 'development') return './src/';
-	else if(env === 'production') return './httpdocs/';
+	else if(env === 'production') return './htdocs/';
 });
 const documentRoot = d();
 
@@ -53,30 +53,30 @@ gulp.task('watch', ()=>{
 });
 
 /**
- * @desc httpdocsディレクトリの全ファイルを削除するタスク
+ * @desc htdocsディレクトリの全ファイルを削除するタスク
  */
 gulp.task('crean-all', (cb)=>{
-	return del(['httpdocs/**/*'], cb);
+	return del(['htdocs/**/*'], cb);
 });
 
 /**
- * @desc httpdocsディレクトリの開発ファイルを削除するタスク
+ * @desc htdocsディレクトリの開発ファイルを削除するタスク
  */
 gulp.task('crean-dev', (cb)=>{
 	return del([
 		'.htaccess',
-		'httpdocs/**/*.njk',
-		'httpdocs/common/template',
-		'httpdocs/common/css/preprocessor',
-		'httpdocs/common/js/entries',
-		'httpdocs/common/js/module',
+		'htdocs/**/*.njk',
+		'htdocs/common/template',
+		'htdocs/common/css/preprocessor',
+		'htdocs/common/js/entries',
+		'htdocs/common/js/module',
 	], cb);
 });
 
 /**
- * @desc srcディレクトリの中身をhttpdocsディレクトリに複製するタスク
+ * @desc srcディレクトリの中身をhtdocsディレクトリに複製するタスク
  */
 gulp.task('copy', (cb)=>{
 	return gulp.src('src/**/*',{base:'src'})
-		.pipe(gulp.dest('httpdocs/'), cb);
+		.pipe(gulp.dest('htdocs/'), cb);
 });
