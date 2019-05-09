@@ -1,6 +1,9 @@
 {%- extends "layout/_layout.njk" -%}
+{%- set lang = 'jp' -%}
 {%- set category = 'category' -%}
-{# headタグ #}
+
+{% block htmlLang %}{{ lang }}{% endblock %}
+{# head #}
 {% block TDK %}
 	<title>★★★</title>
 	<meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
@@ -16,14 +19,12 @@
 	<link rel="alternate" hreflang="ja" href="https://example.com/">
 	<link rel="alternate" hreflang="en" href="https://example.com/e/">
 {% endblock %}
-{% block headAsset %}
-{% include "module/_head-asset.njk" %}
-{% endblock %}
+{% block headAsset %}{{ super() }}{% endblock %}
 {#- head -#}
 {#- body -#}
 {% block header %}
 {% include "module/_header.njk" %}
-{% endblock %}{#- header --end -#}
+{% endblock %}
 {% block content %}
 <main class="{{ category }}">
 	<section>
@@ -34,10 +35,5 @@
 	</section>
 </main>
 {% endblock %}
-{% block footer %}
-{% include "module/_footer.njk" %}
-{% endblock %}{#- footer --end -#}
-{% block bodyAsset %}
-{% include "module/_body-asset.njk" %}
-{% endblock %}
-{#- body --end -#}
+{% block footer %}{{ super() }}{% endblock %}
+{% block bodyAsset %}{{ super() }}{% endblock %}
