@@ -1,12 +1,17 @@
-
 /**
-* @desc parallax scrollのクラス
-*/
+ * パララックススクロール効果を付与します。
+ */
 
 const scroll = {
 	y    : window.scrollY || window.pageYOffset,
 	easeY: window.scrollY || window.pageYOffset
 };
+
+/**
+* @desc 要素に対してパララックス効果を当てます。
+* パララックス効果を付与したい要素に".js-js-parallax-scroll"クラスを付与してください。
+* @param {Object} _el パララックススクロールを有効にするオブジェクト
+*/
 
 class ScrollParallaxElement {
 	constructor(_el) {
@@ -31,6 +36,12 @@ class ScrollParallaxElement {
 	}
 }
 
+
+/**
+* @desc パララックススクロールが有効なページの初期化
+* @param {String} _query パララックススクロールを有効にする要素のクラス
+*/
+
 class ScrollParallax {
 	constructor(_query) {
 		const elements = document.querySelectorAll(_query);
@@ -44,7 +55,7 @@ class ScrollParallax {
 	}
 }
 
-export const initialize = () => {
+export const initScrollParallax = () => {
 	const parallax = new ScrollParallax('.js-parallax-scroll');
 
 	const assumedFps = 60;

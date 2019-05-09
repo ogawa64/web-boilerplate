@@ -9210,6 +9210,11 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
+scrolltrigger-classes@^0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/scrolltrigger-classes/-/scrolltrigger-classes-0.3.6.tgz#7edae82745f093609d8d82c5d7e5e8307f136fa2"
+  integrity sha1-ftroJ0Xwk2CdjYLF1+XoMH8Tb6I=
+
 scss-tokenizer@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/scss-tokenizer/-/scss-tokenizer-0.2.3.tgz#8eb06db9a9723333824d3f5530641149847ce5d1"
