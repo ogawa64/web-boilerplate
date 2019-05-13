@@ -22,15 +22,16 @@ update | message | name
 
 **インストール**  
 `yarn install`  
-必要なパッケージがインストールされます。
+必要なパッケージがインストールされます。  
 [yarn install](https://yarnpkg.com/ja/docs/installing-dependencies)    
 
 
 **開発**  
 `yarn dev`  
 各ファイルの変更を監視するローカルサーバが立ち上がります。  
-ローカルサーバはこちらのパッケージを使っています。
-[browser-sync](https://yarnpkg.com/ja/package/browser-sync)    
+ローカルサーバはこちらのパッケージを使っています。  
+[browser-sync](https://yarnpkg.com/ja/package/browser-sync)   
+
 ***-初回のみ***  
 `yarn dev`コマンド中に/common/template/layout/\_layout.njk,/common/css/preprocesser/index.styl,/common/js/entries/index.jsファイルをそれぞれ保存してください。   
 
@@ -63,10 +64,10 @@ EditorConfigは、さまざまなエディターやIDEにまたがって同じ�
 **[.gitignore](https://git-scm.com/docs/gitignore)**  
 gitignoreファイルはGitが無視すべき意図的に追跡されていないファイルを指定します。 Gitによって既に追跡されているファイルは影響を受けません。
 
-[.gitattribute](https://git-scm.com/docs/gitattributes)
+**[.gitattribute](https://git-scm.com/docs/gitattributes)**  
 
-[.gulpfile.babel.js](https://gulpjs.com/docs/en/api/concepts)  
+**[.gulpfile.babel.js](https://gulpjs.com/docs/en/api/concepts)**    
 gulpの設定ファイルです。  
 
-[package.json](http://liberty-technology.biz/PublicItems/npm/package.json.html)  
+**[package.json](http://liberty-technology.biz/PublicItems/npm/package.json.html)**  
 各パッケージの依存関係やスクリプトを記載してあるJSONファイルです。
