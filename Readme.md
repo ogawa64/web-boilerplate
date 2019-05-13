@@ -23,17 +23,16 @@ update | message | name
 **インストール**
 `yarn install`  
 必要なパッケージがインストールされます。
-[yarn install](https://yarnpkg.com/ja/docs/installing-dependencies)  
+[yarn install](https://yarnpkg.com/ja/docs/installing-dependencies)    
 
 
 **開発**
 `yarn dev`  
 各ファイルの変更を監視するローカルサーバが立ち上がります。  
 ローカルサーバはこちらのパッケージを使っています。
-[browser-sync](https://yarnpkg.com/ja/package/browser-sync)  
-
-***初回のみ***
-`yarn dev`コマンド中に/common/template/layout/\_layout.njk,/common/css/preprocesser/index.styl,/common/js/entries/index.jsファイルをそれぞれ保存してください。
+[browser-sync](https://yarnpkg.com/ja/package/browser-sync)    
+***-初回のみ***
+`yarn dev`コマンド中に/common/template/layout/\_layout.njk,/common/css/preprocesser/index.styl,/common/js/entries/index.jsファイルをそれぞれ保存してください。  
 
 
 **ビルド(サーバにアップするファイルを生成します)**
