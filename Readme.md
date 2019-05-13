@@ -20,22 +20,32 @@ update | message | name
 [yarn](https://yarnpkg.com/ja/docs/install#windows-stable)  
 
 
-初回のみ    
+**インストール**
 `yarn install`  
-`_htdocs`ディレクトリを`htdocs`にリネーム（git管理から外します。）  
+必要なパッケージがインストールされます。
+[yarn install](https://yarnpkg.com/ja/docs/installing-dependencies)  
 
-開発  
+
+**開発**
 `yarn dev`  
+各ファイルの変更を監視するローカルサーバが立ち上がります。  
+ローカルサーバはこちらのパッケージを使っています。
+[browser-sync](https://yarnpkg.com/ja/package/browser-sync)  
 
-ビルド(サーバにアップするファイルを生成します)  
+***初回のみ***
+`yarn dev`コマンド中に/common/template/layout/\_layout.njk,/common/css/preprocesser/index.styl,/common/js/entries/index.jsファイルをそれぞれ保存してください。
+
+
+**ビルド(サーバにアップするファイルを生成します)**
 `yarn build`  
-
+htdocsディレクトリにコンパイルされたファイルが生成されます。  
 詳細は"package.json"をご確認ください。  
 
 
 # 説明  
 src  
-開発用ディレクトリです。ローカルサーバのドキュメントルートディレクトリには、こちらを設定してください。
+開発用ディレクトリです。ローカルサーバのドキュメントルートディレクトリには、こちらを設定してください。  
+(`yarn dev`コマンドで立ち上がるローカルサーバはこのディレクトリがドキュメントルートに設定されています。詳しくはconfig/bs-config.jsをご確認ください)  
 
 htdocs  
 納品用ディレクトリです。`yarn build` コマンドでこのディレクトリに納品用ファイルが生成されます。
