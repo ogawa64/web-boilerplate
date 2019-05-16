@@ -91,7 +91,7 @@ gulp.task('imagemin', (cb)=>{
 	return gulp.src('htdocs/**/*.{png,jpg}',{base:'src'})
 		.pipe(plumber())
 		.pipe(imageMin([
-			pngquant({ quality: [.65, .8] }),
+			pngquant({ quality: '65-80' }),
 			mozjpeg({ quality: 80, progressive: true })
 		]))
 		.pipe(gulp.dest('htdocs/'), cb);

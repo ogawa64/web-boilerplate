@@ -22,7 +22,7 @@
     "build:postcss": "postcss src/**/*.css --no-map --dir htdocs --base src --config ./config/postcss.config.js",
     "build:webpack": "webpack --mode production --config ./config/webpack.config.js",
     "build:nunjucks": "gulp nunjucks",
-		"build:imagemin": "gulp imagemin",
+    "build:imagemin": "gulp imagemin",
     "build": "cross-env NODE_ENV=production npm-run-all crean-all copy build:nunjucks build:stylus build:postcss build:webpack build:imagemin crean-dev",
     "test": "jest --coverage"
   },
@@ -62,7 +62,7 @@
     "gulp-nunjucks-render": "^2.2.3",
     "imagemin": "^6.1.0",
     "imagemin-mozjpeg": "^8.0.0",
-    "imagemin-pngquant": "^7.0.0",
+    "imagemin-pngquant": "5.0.1",
     "node-sass": "^4.11.0"
   }
 }
