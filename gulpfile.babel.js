@@ -7,6 +7,9 @@ import data from 'gulp-data';
 import rename from 'gulp-rename';
 import del from 'del';
 import plumber from 'gulp-plumber';
+import imageMin from 'gulp-imagemin';
+import pngquant from 'imagemin-pngquant';
+import mozjpeg from 'imagemin-mozjpeg';
 
 /**
 	* @param env 環境変数 development, production
@@ -78,5 +81,18 @@ gulp.task('crean-dev', (cb)=>{
  */
 gulp.task('copy', (cb)=>{
 	return gulp.src('src/**/*',{base:'src'})
+		.pipe(gulp.dest('htdocs/'), cb);
+});
+
+/**
+ * @desc htdocsディレクトリの画像を圧縮するタスク
+ */
+gulp.task('imagemin', (cb)=>{
+	return gulp.src('htdocs/**/*.{png,jpg}',{base:'src'})
+		.pipe(plumber())
+		.pipe(imageMin([
+			pngquant({ quality: [.65, .8] }),
+			mozjpeg({ quality: 80, progressive: true })
+		]))
 		.pipe(gulp.dest('htdocs/'), cb);
 });
