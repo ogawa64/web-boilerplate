@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const glob = require('glob');
 
@@ -32,6 +33,12 @@ module.exports = {
 			}
 		]
 	},
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    })
+  ],
 	optimization: {
 		splitChunks: {
 			cacheGroups: {
