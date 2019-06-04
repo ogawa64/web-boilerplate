@@ -1,14 +1,14 @@
 {
-  "data": {
-		"root": "https://example.com/",
-    "sitename": "templete",
-		"favicon": "/favicon.ico",
-    "meta": {
-      "description": "default description",
-      "keywords": "default keywords"
-    },
-		"og": {
-			"image": "https://example.com/ogp.jpg"
-		}
+  "/index.html": {
+    "title": "title",
+    "description": "description",
+    "image": "https://example.com/ogp.jpg",
+    "fbID": "facebookID",
+  },
+  "/index2.html": {
+    "title": "title2",
+    "description": "description2",
+    "image": "https://example.com/ogp.jpg",
+    "fbID": "facebookID",
   }
 }

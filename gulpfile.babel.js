@@ -2,6 +2,7 @@
 
 import gulp from 'gulp';
 import ejs from 'gulp-ejs';
+import pug from 'gulp-pug';
 import nunjucksRender from 'gulp-nunjucks-render';
 import data from 'gulp-data';
 import rename from 'gulp-rename';
@@ -32,19 +33,16 @@ gulp.task('ejs', ()=>{
 		.pipe(gulp.dest(documentRoot));
 });
 
-
 /**
- * @desc nunjucksをトランスパイルするタスク
+ * @desc pugをトランスパイルするタスク
  */
-gulp.task('nunjucks', ()=>{
-	return gulp.src(['./src/**/*.njk','!./src/**/_*.njk'])
+gulp.task('pug', ()=>{
+	return gulp.src(['./src/**/*.pug','!./src/**/_*.pug'])
 		.pipe(data(()=>{return require('./src/common/template/config/site.json');}))
-		.pipe(nunjucksRender({
-			path: ['src/common/template/'],
-			envOptions: {
-				autoescape: false
-			},
-		})).on('error',(err)=>{if(err) throw err;})
+		.pipe(pug({
+      pretty: true,
+      basedir: 'src/common/template'
+    })).on('error',(err)=>{if(err) throw err;})
 		.pipe(gulp.dest(documentRoot));
 });
 
@@ -52,7 +50,7 @@ gulp.task('nunjucks', ()=>{
  * @desc ファイル変更を監視するタスク
  */
 gulp.task('watch', ()=>{
-	gulp.watch('./src/**/*.njk', gulp.task('nunjucks'));
+	gulp.watch('./src/**/*.pug', gulp.task('pug'));
 });
 
 /**
