@@ -1,0 +1,20 @@
+// css grid用の処理\
+grid($columns, $rows, $column-gutter, $row-gutter)
+  .grid
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: repeat($columns, $column-gutter);
+    grid-template-rows: repeat($rows, 1fr);
+    -ms-grid-columns: $column-gutter $column-gutter $column-gutter $column-gutter $column-gutter $column-gutter;
+    -ms-grid-rows: $row-gutter $row-gutter $row-gutter $row-gutter $row-gutter $row-gutter;
+
+
+gridSize($colStart, $colEnd, $rowStart, $rowEnd)
+  grid-column-start: $colStart;
+  grid-column-end: $colEnd;
+  grid-row-start: $rowStart;
+  grid-row-end: $rowEnd;
+  -ms-grid-column: $colStart;
+  -ms-grid-row: $rowStart;
+  -ms-grid-column-span: $colEnd - $colStart;
+  -ms-grid-row-span: $rowEnd - $rowStart;

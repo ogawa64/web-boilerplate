@@ -1,0 +1,26 @@
+// PCサイズのみ表示
+.show-for-pc
+  @media screen and (max-width: $bp-tb-max)
+    display: none
+
+// SPサイズのみ表示
+.show-for-sp
+  @media screen and (min-width: $bp-tb-min + 1)
+    display: none
+
+// タブレットサイズのみ表示
+.show-for-tb
+  @media screen and (max-width: $bp-tb-min)
+    display: none
+  @media screen and (min-width: $bp-tb-max + 1)
+    display: none
+
+// タブレットサイズ以上で表示
+.show-for-tb-upper
+  @media screen and (max-width: $bp-tb-min)
+    display: none
+
+// タブレットサイズ以下で表示
+.show-for-tb-lower
+  @media screen and (min-width: $bp-tb-max + 1)
+    display: none
