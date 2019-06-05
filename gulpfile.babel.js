@@ -38,7 +38,7 @@ gulp.task('ejs', ()=>{
  */
 gulp.task('pug', ()=>{
 	return gulp.src(['./src/**/*.pug','!./src/**/_*.pug'])
-		.pipe(data(()=>{return require('./src/common/template/config/site.json');}))
+		// .pipe(data(()=>{return require('./src/common/template/config/site.json');}))
 		.pipe(pug({
       pretty: true,
       basedir: 'src/common/template'
