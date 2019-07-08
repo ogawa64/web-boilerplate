@@ -1,0 +1,23 @@
+{
+  "/index.html": {
+    "PAEG_URL":"/index.html",
+    "PAGE_TITLE":"トップページ",
+    "PAGE_DESC":"トップページです。aaaa",
+    "HIERARCHY": 0,
+    "CATEGORY": "category"
+  },
+  "/about/": {
+    "PAEG_URL":"/about/",
+    "PAGE_TITLE":"アバウトページ",
+    "PAGE_DESC":"アバウトページです。",
+    "HIERARCHY": 1,
+    "CATEGORY": "category"
+  },
+  "/about/flow.html": {
+    "PAEG_URL":"/about/flow.html",
+    "PAGE_TITLE":"〇〇の流れページ",
+    "PAGE_DESC":"〇〇の流れページです。",
+    "HIERARCHY": 1,
+    "CATEGORY": "category"
+  }
+}

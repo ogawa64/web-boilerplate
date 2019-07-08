@@ -1,0 +1,9 @@
+mixin breadcrumb(...arr)
+  nav
+    ul#breadcrumb
+      each val in arr
+        li
+          if (val.href != '')
+            a(href=`${val.href}`) #{val.label}
+          else
+            span #{val.label}

@@ -1,33 +1,51 @@
+include /common/template/module/_mixin
+
+block variable
+
 doctype
-html(lang="ja")
+html(lang=`${LANG}`)
   head
-    include /module/_gtm
-    meta(charset="ust-8")
+    include /common/template/module/_gtm
+
+    //- サイト全体で共通の設定
+    meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    meta(property="og:site_name", content="website name")
+    meta(property="og:site_name", content=`${SITENAME}`)
 
     block TDK
+      //- facebook で共通の設定
+      meta(property="fb:app_id", content='id')
+      meta(property="og:image", content=`${ROOT + SITEIMAGE}`)
+      //- twitter で共通の設定
+      meta(property="twitter:card", content='summary')
+
+      +TDK(PAEG_URL,PAGE_TITLE,PAGE_DESC)
+
     block headAssets
-      include /module/_head-assets
+      include /common/template/module/_head-assets
 
   body
-    include /module/_gtm-noscript
-    #document
+    include /common/template/module/_gtm-noscript
+    #document(class=CATEGORY)
+
       block header
-        include /module/_header
+        include /common/template/module/_header
 
       block content
-        main
+        main#content
           article
             section
               h1 No content.
 
       block aside
-        aside
-          p aside content
+        aside#sub-content
+          p Aside content.
 
       block footer
-        include /module/_footer
+        include /common/template/module/_footer
 
-      include /module/_schema
+      block bodyAssets
+        include /common/template/module/_body-assets
+
+      include /common/template/module/_schema
