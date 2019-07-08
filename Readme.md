@@ -44,16 +44,20 @@ update | message | name
 HTML  
 HTMLの開発はpugを採用  
 ・[src/common/template/config/site.json](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/blob/master/src/common/template/config/site.json)  
+
 サイト共通のデータを定義（ホストネームなど）  
 ・[src/common/template/config/page.json](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/blob/master/src/common/template/config/page.json)  
+
 ページごとのデータを定義（メタ情報など）  
 ・[src/common/template/layout/_layout.json](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/blob/master/src/common/template/layout/_layout.pug)  
+
 HTMLのテンプレート構造を定義  
 ・[src/common/template/module](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/blob/master/src/common/template/module/)  
 HTMLのモジュールパーツを定義（ヘッダーなど）  
 
+
 CSS  
-CSSの開発はstylusを採用
+CSSの開発はstylusを採用  
 ・[src/common/css/preprocessor/base](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/tree/master/src/common/css/preprocessor/base)  
 ベースのスタイルを定義（リセットスタイルなど）  
 ・[src/common/css/preprocessor/modules](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/tree/master/src/common/css/preprocessor/modules)  
@@ -63,8 +67,9 @@ CSSの開発はstylusを採用
 ・[src/common/css/preprocessor/settings](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/tree/master/src/common/css/preprocessor/settings)  
 各種設定を定義（変数など）  
 
-JS
-JSはwebpackでバンドルしています。babelを採用しているのでES6以降の記述にも対応
+
+JS  
+JSはwebpackでバンドルしています。babelを採用しているのでES6以降の記述にも対応  
 ・[src/common/js/entries](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/tree/master/src/common/js/entries)  
 webpackのエントリーポイントとなるのファイルを管理  
 ・[src/common/js/module](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/tree/master/src/common/js/module)  
