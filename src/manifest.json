@@ -1,0 +1,14 @@
+{
+  "name": "aq-html-boilerplate",
+  "short_name": "aq-template",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#cccccc",
+  "icons": [
+    {
+      "src": "/common/assets/images/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ]
+}
