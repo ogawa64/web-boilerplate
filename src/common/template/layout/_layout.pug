@@ -14,13 +14,10 @@ html(lang=`${LANG}`)
     meta(property="og:site_name", content=`${SITENAME}`)
 
     block TDK
-      //- facebook で共通の設定
-      meta(property="fb:app_id", content='id')
-      meta(property="og:image", content=`${ROOT + SITEIMAGE}`)
-      //- twitter で共通の設定
-      meta(property="twitter:card", content='summary')
-
       +TDK(PAEG_URL,PAGE_TITLE,PAGE_DESC)
+      link(rel="manifest" href="/manifest.json")
+      +alternate(PAEG_URL)
+
 
     block headAssets
       include /common/template/module/_head-assets
