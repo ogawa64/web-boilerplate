@@ -11,17 +11,18 @@ html(lang=`${LANG}`)
     //- サイト全体で共通の設定
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(http-equiv="x-dns-prefetch-control", content="on")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    meta(property="og:site_name", content=`${SITENAME}`)
 
     block TDK
       +TDK(PAEG_URL,PAGE_TITLE,PAGE_DESC)
-      link(rel="manifest" href="/manifest.json")
       +alternate(PAEG_URL)
-
 
     block headAssets
       include /common/template/module/_head-assets
+      include /common/template/module/_resource-hint
+
+    link(rel="manifest" href="/manifest.json")
 
   body
     include /common/template/module/_gtm-noscript
