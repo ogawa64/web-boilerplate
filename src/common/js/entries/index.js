@@ -3,6 +3,7 @@ import objectFitImages from 'object-fit-images';
 
 import {initScrollParallax} from '../module/parallax';
 
+import Vue from 'vue';
 
 document.addEventListener('DOMContentLoaded',() => {
 	initScrollTrigger();

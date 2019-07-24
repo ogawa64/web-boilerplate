@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const glob = require('glob');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const mode = process.env.NODE_ENV; // "development" or "production"
 const baseDir = (mode === 'production') ? '../htdocs/' : '../src/';
@@ -31,6 +32,12 @@ module.exports = {
             presets: [['@babel/preset-env', {modules: false}]]
           }
         }]
+      },
+      {
+        test: /\.vue$/,
+        use: [{
+          loader: 'vue-loader'
+        }]
       }
     ]
   },
@@ -38,8 +45,13 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
-    })
+    }),
+    new VueLoaderPlugin()
   ],
+  resolve: {
+    extensions: ['.vue','.js'],
+    alias: { 'vue$': 'vue/dist/vue.esm.js' }
+  },
   optimization: {
     splitChunks: {
       cacheGroups: {

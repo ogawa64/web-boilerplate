@@ -72,7 +72,7 @@ gulp.task('crean-all', (cb)=>{
 gulp.task('crean-dev', (cb)=>{
 	return del([
 		'.htaccess',
-		'htdocs/**/*.njk',
+		'htdocs/**/*.pug',
 		'htdocs/common/template',
 		'htdocs/common/css/preprocessor',
 		'htdocs/common/js/entries',
