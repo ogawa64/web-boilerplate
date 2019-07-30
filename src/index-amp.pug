@@ -1,0 +1,59 @@
+extends /common/template/layout/_layout-amp.pug
+block variable
+  -
+    var pageData = {
+      hierarchy: HIERARCHY,
+      url: PAEG_URL,
+      title: PAGE_TITLE,
+      desc: PAGE_DESC,
+      category: CATEGORY
+    }
+
+//- ページごとで追加したいmetaタグはこちらに記述
+//- block append TDK
+//-   例）meta(property="twitter:title", content="title")
+
+//- ページごとで追加したいアセット読み込み・リンクはこちらに記述
+//- block append headAssets
+//-   例）link(rel="canonical" href=`${SITE.root}`+"/en"+`${PAGES.index.path}`)
+
+//- ヘッダーファイルの追記が必要な場合はこちらに記述
+//- block append header
+
+//- メインコンテンツエリア
+block content
+  +breadcrumb(
+    {label:'link1',href:'/index.html'},
+    {label:'link2',href:'/index2.html'},
+    {label:'link3',href:'/index3.html'},
+    {label:'link4',href:'/index4.html'},
+    {label:'link5',href:''}
+  )
+
+  main#main-content
+    h1 title 1
+    article
+      h2 title 2
+      p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      ul
+        li Lorem Ipsum is simply dummy text
+        li Lorem Ipsum is simply dummy text
+        li Lorem Ipsum is simply dummy text
+
+    article
+      h2 title 2
+      p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      ul
+        li Lorem Ipsum is simply dummy text
+        li Lorem Ipsum is simply dummy text
+        li Lorem Ipsum is simply dummy text
+
+
+//- アサイドファイルの追記が必要な場合はこちらに記述
+//- block append aside
+
+//- フッターファイルの追記が必要な場合はこちらに記述
+//- block append footer
+
+//- ページごとで追加したいアセット読み込み・リンクはこちらに記述
+//- block append bodyAssets
