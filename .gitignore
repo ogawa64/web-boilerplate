@@ -8,7 +8,6 @@
 node_modules/
 
 #config
-config/bs-config.js
 
 # production
 htdocs/
