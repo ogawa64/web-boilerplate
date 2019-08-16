@@ -10,8 +10,10 @@ block variable
     }
 
 //- ページごとで追加したいmetaタグはこちらに記述
-//- block append TDK
-//-   例）meta(property="twitter:title", content="title")
+block append TDK
+  //- 例）meta(property="twitter:title", content="title")
+  link(rel="amphtml" href="https://example.com/index-amp.html")
+
 
 //- ページごとで追加したいアセット読み込み・リンクはこちらに記述
 //- block append headAssets
