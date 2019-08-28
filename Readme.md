@@ -35,8 +35,7 @@ update | message | name
 **開発**  
 `yarn dev`  
 ローカルサーバが立ち上がります。  
-各種開発ファイルの保存を監視してリロードします。
-
+各種開発ファイルの保存を監視してリロードします。  
 
 ***-初回のみ***  
 `yarn dev`コマンド中に/common/template/layout/\_layout.pug,/common/css/preprocesser/index.styl,/common/js/entries/index.jsファイルをそれぞれ保存してください。   
@@ -93,18 +92,11 @@ htdocsディレクトリにコンパイルされたファイルが生成され�
 納品用ディレクトリです。`yarn build` コマンドでこのディレクトリに納品用ファイルが生成されます。
 FTPでサーバにあげる、.zipファイルで納品する場合はこちらのソースファイルを使用してください。
 
-**macro**
-jsのマクロ処理用ファイルのディレクトリです。  
-
 **config**  
 各種設定ファイルが格納してあります。  
 
 **[.editorconfig](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/blob/master/.editorconfig)**  
 EditorConfigは、さまざまなエディターやIDEにまたがって同じプロジェクトに取り組んでいる複数の開発者にとって、一貫したコーディングスタイルを維持するのに役立ちます。 EditorConfigプロジェクトは、コーディングスタイルを定義するためのファイルフォーマットと、エディタがファイルフォーマットを読み、定義されたスタイルを順守できるようにするテキストエディタプラグインのコレクションから構成されています。 EditorConfigファイルは読みやすく、バージョン管理システムとうまく機能します。  
-
-**yarn.lock**  
-各開発者のマシン間で一貫したインストールを行うため、各パッケージのバージョンや依存関係が記載してあります。  
-**このファイルは手動で更新しないください。　※yarn-cliでのみ変更可能**  
 
 **[.gitignore](https://git-scm.com/docs/gitignore)**  
 gitignoreファイルはGitが無視すべき意図的に追跡されていないファイルを指定します。 Gitによって既に追跡されているファイルは影響を受けません。  

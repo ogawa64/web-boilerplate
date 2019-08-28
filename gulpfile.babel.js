@@ -8,6 +8,7 @@ import rename from 'gulp-rename';
 import del from 'del';
 import plumber from 'gulp-plumber';
 import imageMin from 'gulp-imagemin';
+import checkFileSize from 'gulp-check-filesize';
 import pngquant from 'imagemin-pngquant';
 import mozjpeg from 'imagemin-mozjpeg';
 
@@ -60,6 +61,16 @@ gulp.task('watch', ()=>{
 });
 
 /**
+* @desc srcディレクトリの中身をhtdocsディレクトリに複製するタスク
+*/
+gulp.task('check-ampcss', (cb)=>{
+	return gulp.src('htdocs/common/css/index-amp.css')
+  .pipe(checkFileSize({
+    fileSizeLimit: 50000
+  }));
+});
+
+/**
 * @desc htdocsディレクトリの全ファイルを削除するタスク
 */
 gulp.task('crean-all', (cb)=>{
@@ -74,7 +85,7 @@ gulp.task('crean-dev', (cb)=>{
 		'.htaccess',
 		'htdocs/**/*.pug',
 		'htdocs/common/template',
-		'htdocs/common/css/preprocessor',
+		'htdocs/common/css/stylus',
 		'htdocs/common/js/entries',
 		'htdocs/common/js/module',
 	], cb);
@@ -85,7 +96,7 @@ gulp.task('crean-dev', (cb)=>{
 */
 gulp.task('copy', (cb)=>{
 	return gulp.src('src/**/*',{base:'src'})
-	.pipe(gulp.dest('htdocs/'), cb);
+  .pipe(gulp.dest('htdocs/'), cb);
 });
 
 /**
