@@ -4,7 +4,7 @@ include /common/template/module/_mixin
 block variable
 
 doctype
-html(amp)
+html(amp lang=`${LANG}`)
   head
 
     //- include /common/template/module/amp/_amp-gtm
@@ -13,6 +13,9 @@ html(amp)
     meta(charset="utf-8")
     meta(http-equiv="x-dns-prefetch-control", content="on")
     meta(name="viewport", content="width=device-width,minimum-scale=1,initial-scale=1")
+    meta(name="format-detection", content="email=no,telephone=no,address=no")
+    link(rel="apple-touch-icon-precomposed", href="/appconfig/icon-192x192.png")
+
 
     block TDK
       //- +TDK(PAEG_URL,PAGE_TITLE,PAGE_DESC)
