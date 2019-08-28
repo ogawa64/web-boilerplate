@@ -7,7 +7,7 @@ doctype
 html(amp ,lang=`${LANG}`)
   head
 
-    //- include /common/template/module/amp/_amp-gtm
+    include /common/template/module/amp/_amp-gtm
 
     //- サイト全体で共通の設定
     meta(charset="utf-8")
@@ -27,7 +27,7 @@ html(amp ,lang=`${LANG}`)
     link(rel="manifest" href="/manifest.json")
 
   body
-    //- include /common/template/module/amp/_amp-gtm-noscript
+    include /common/template/module/amp/_amp-gtm-noscript
     #document(class=CATEGORY)
 
       block header
@@ -45,6 +45,3 @@ html(amp ,lang=`${LANG}`)
 
       block footer
         include /common/template/module/_footer
-
-      //- block bodyAssets
-      //-   include /common/template/module/_body-assets
