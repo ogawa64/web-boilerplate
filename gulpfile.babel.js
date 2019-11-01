@@ -1,7 +1,6 @@
 'use strict';
 
 import gulp from 'gulp';
-import ejs from 'gulp-ejs';
 import pug from 'gulp-pug';
 import data from 'gulp-data';
 import rename from 'gulp-rename';
@@ -23,15 +22,6 @@ const d = (()=>{
 });
 const documentRoot = d();
 
-/**
-* @desc ejsをトランスパイルするタスク
-*/
-// gulp.task('ejs', ()=>{
-// 	return gulp.src(['src/**/*.ejs','!./src/**/_*.ejs'])
-// 	.pipe(ejs({msg: 'transpiling ejs.....'})).on('error',(err)=>{if(err) throw err;})
-// 	.pipe(rename({ extname: '.html'}))
-// 	.pipe(gulp.dest(documentRoot));
-// });
 
 /**
 * @desc pugをトランスパイルするタスク
