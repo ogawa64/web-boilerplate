@@ -1,0 +1,92 @@
+// 5 ~ 100
+
+@for $i from 0 through 20
+  // margin
+  .pc-mt#{$i * 5}
+    @media screen and (min-width:$bp-tb-max + 1)
+      margin-top: #{$i * 5}px
+
+  .sp-mt#{$i * 5}
+    @media screen and (max-width:$bp-tb-max)
+      margin-top: #{$i * 5}px
+
+  .pc-mr#{$i * 5}
+    @media screen and (min-width:$bp-tb-max + 1)
+      margin-right: #{$i * 5}px
+
+  .sp-mr#{$i * 5}
+    @media screen and (max-width:$bp-tb-max)
+      margin-right: #{$i * 5}px
+
+  .pc-mb#{$i * 5}
+    @media screen and (min-width:$bp-tb-max + 1)
+      margin-bottom: #{$i * 5}px
+
+  .sp-mb#{$i * 5}
+    @media screen and (max-width:$bp-tb-max)
+      margin-bottom: #{$i * 5}px
+
+  .pc-ml#{$i * 5}
+    @media screen and (min-width:$bp-tb-max + 1)
+      margin-left: #{$i * 5}px
+
+  .sp-ml#{$i * 5}
+    @media screen and (max-width:$bp-tb-max)
+      margin-left: #{$i * 5}px
+
+
+
+  // padding
+  .pc-pt#{$i * 5}
+    @media screen and (min-width:$bp-tb-max + 1)
+      margin-top: #{$i * 5}px
+
+  .sp-pt#{$i * 5}
+    @media screen and (max-width:$bp-tb-min)
+      margin-top: #{$i * 5}px
+
+  .pc-pr#{$i * 5}
+    @media screen and (min-width:$bp-tb-max + 1)
+      margin-right: #{$i * 5}px
+
+  .sp-pr#{$i * 5}
+    @media screen and (max-width:$bp-tb-min)
+      margin-right: #{$i * 5}px
+
+  .pc-pb#{$i * 5}
+    @media screen and (min-width:$bp-tb-max + 1)
+      margin-bottom: #{$i * 5}px
+
+  .sp-pb#{$i * 5}
+    @media screen and (max-width:$bp-tb-min)
+      margin-bottom: #{$i * 5}px
+
+  .pc-pl#{$i * 5}
+    @media screen and (min-width:$bp-tb-max + 1)
+      margin-left: #{$i * 5}px
+
+  .sp-pl#{$i * 5}
+    @media screen and (max-width:$bp-tb-min)
+      margin-left: #{$i * 5}px
+
+
+
+// text-align
+.pc-ta-r
+  @media screen and (min-width:$bp-tb-max + 1)
+    text-align: right
+.pc-ta-c
+  @media screen and (min-width:$bp-tb-max + 1)
+    text-align: center
+.pc-ta-l
+  @media screen and (min-width:$bp-tb-max + 1)
+    text-align: left
+.sp-ta-r
+  @media screen and (max-width:$bp-tb-max)
+    text-align: right
+.sp-ta-c
+  @media screen and (max-width:$bp-tb-max)
+    text-align: center
+.sp-ta-l
+  @media screen and (max-width:$bp-tb-max)
+    text-align: left
