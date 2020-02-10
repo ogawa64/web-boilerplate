@@ -6,6 +6,7 @@ import data from 'gulp-data';
 import rename from 'gulp-rename';
 import del from 'del';
 import plumber from 'gulp-plumber';
+import purgecss from 'gulp-purgecss';
 import imageMin from 'gulp-imagemin';
 import checkFileSize from 'gulp-check-filesize';
 import pngquant from 'imagemin-pngquant';
@@ -41,6 +42,16 @@ gulp.task('pug', ()=>{
 		basedir: 'src'
 	})).on('error',(err)=>{if(err) throw err;})
 	.pipe(gulp.dest(documentRoot));
+});
+
+gulp.task('purgecss', () => {
+  return gulp.src('htdocs/**/*.css')
+  .pipe(plumber())
+  .pipe(purgecss({
+    content: ['htdocs/**/*.html'],
+    css: ['htdocs/**/*.css']
+  }))
+  .pipe(gulp.dest('htdocs/'));
 });
 
 /**

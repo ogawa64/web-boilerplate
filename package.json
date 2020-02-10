@@ -19,10 +19,11 @@
     "build:stylus": "stylus src/common/css/stylus --resolve-url --out htdocs/common/css/",
     "build:postcss": "postcss src/**/*.css --no-map --dir htdocs --base src --config ./config/postcss.config.js",
     "build:check-ampcss": "gulp check-ampcss",
+    "build:purgecss": "gulp purgecss",
     "build:webpack": "webpack --mode production --config ./config/webpack.config.js",
     "build:pug": "gulp pug",
     "build:imagemin": "gulp imagemin",
-    "build": "cross-env NODE_ENV=production npm-run-all crean-all copy build:pug build:stylus build:postcss build:webpack build:imagemin build:check-ampcss crean-dev",
+    "build": "cross-env NODE_ENV=production npm-run-all crean-all copy build:pug build:stylus build:purgecss build:postcss build:webpack build:imagemin build:check-ampcss crean-dev",
     "test": "jest --coverage"
   },
   "devDependencies": {
@@ -63,6 +64,7 @@
     "gulp": "^4.0.0",
     "gulp-check-filesize": "^2.0.1",
     "gulp-nunjucks-render": "^2.2.3",
+    "gulp-purgecss": "^2.0.6",
     "imagemin": "^6.1.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "5.0.1",
