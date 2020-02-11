@@ -7,6 +7,7 @@ import sass from 'gulp-sass';
 import sassGlob from 'gulp-sass-glob';
 import data from 'gulp-data';
 import rename from 'gulp-rename';
+import injectString from 'gulp-inject-string';
 import del from 'del';
 import plumber from 'gulp-plumber';
 import sourcemaps from 'gulp-sourcemaps';
@@ -15,6 +16,7 @@ import imageMin from 'gulp-imagemin';
 import checkFileSize from 'gulp-check-filesize';
 import pngquant from 'imagemin-pngquant';
 import mozjpeg from 'imagemin-mozjpeg';
+import fs from 'fs';
 
 sass.compiler = require('node-sass');
 
@@ -29,12 +31,13 @@ const documentRoot = env === 'production' ? './htdocs/' : './src/';
 * @desc pugをトランスパイルするタスク
 */
 gulp.task('pug', ()=>{
-	return gulp.src([`${documentRoot}**/*.pug`,`!${documentRoot}**/_*.pug`])
+	return gulp.src(['./src/**/*.pug','!./src/**/_*.pug'])
   .pipe(plumber())
   .pipe(data((file)=>{
 		const metaData = require('./src/common/template/config/page.json');
 		const filePath = file.path.split('\\').join('/');
-		const fileName = filePath.split('src')[1].replace('.pug', '.html');
+		const fileName = filePath.split('src')[1].replace('.pug','.html');
+    console.log('transpiling...',fileName);
 		return metaData[fileName];
 	}))
   .pipe(data(()=>{return require('./src/common/template/config/site.json');}))
@@ -65,8 +68,8 @@ gulp.task('pug', ()=>{
 */
 gulp.task('sass',() => {
   return gulp.src([
-    `${documentRoot}**/*.sass`,`!${documentRoot}**/_*.sass`,
-    `${documentRoot}**/*.scss`,`!${documentRoot}**/_*.scss`
+    './src/**/*.sass','!./src/**/_*.sass',
+    './src/**/*.scss','!./src/**/_*.scss',
   ])
   .pipe(plumber())
   .pipe(sassGlob())
@@ -95,19 +98,37 @@ gulp.task('purgecss', (cb) => {
 });
 
 /**
+* @desc CSSからHTMLで使用されていないセレクタを除くタスク
+*/
+gulp.task('inject-amphtml', (cb) => {
+  const cssStr = fs.readFileSync(`${documentRoot}common/css/index.amp.css`,'utf8');
+  return gulp.src(`${documentRoot}**/*amp.html`)
+  .pipe(plumber())
+  .pipe(injectString.after('<style amp-custom>', cssStr))
+  .pipe(gulp.dest(documentRoot), cb);
+});
+
+/**
 * @desc ファイル変更を監視するタスク
 */
 gulp.task('watch', () => {
   gulp.watch('./src/**/*.pug', gulp.task('pug'));
-  // gulp.watch('./src/**/*.styl', gulp.task('stylus'));
   gulp.watch(['./src/**/*.sass','./src/**/*.scss'], gulp.task('sass'));
 });
+
+/**
+* @desc ファイル変更を監視するタスク
+*/
+gulp.task('watch--amp', () => {
+  gulp.watch(['./src/**/*.sass','./src/**/*.scss','./src/**/*.pug'], gulp.series('pug','sass','inject-amphtml'));
+});
+
 
 /**
 * @desc srcディレクトリの中身をhtdocsディレクトリに複製するタスク
 */
 gulp.task('check-ampcss', (cb) => {
-	return gulp.src('htdocs/common/css/index-amp.css')
+	return gulp.src('htdocs/common/css/index.amp.css')
   .pipe(checkFileSize({
     fileSizeLimit: 50000
   }), cb);
@@ -128,7 +149,6 @@ gulp.task('crean-dev', (cb) => {
 		'.htaccess',
 		'htdocs/**/*.pug',
 		'htdocs/common/template',
-    // 'htdocs/common/css/stylus',
     'htdocs/common/css/sass',
 		'htdocs/common/js/entries',
 		'htdocs/common/js/module',

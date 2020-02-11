@@ -2,7 +2,14 @@
   "/index.html": {
     "PAEG_URL":"/index.html",
     "PAGE_TITLE":"トップページ",
-    "PAGE_DESC":"トップページです。aaaa",
+    "PAGE_DESC":"トップページです。",
+    "HIERARCHY": 0,
+    "CATEGORY": "top"
+  },
+  "/index.amp.html": {
+    "PAEG_URL":"/index.amp.html",
+    "PAGE_TITLE":"ampページです",
+    "PAGE_DESC":"ampページです。",
     "HIERARCHY": 0,
     "CATEGORY": "top"
   },

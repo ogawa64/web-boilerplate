@@ -26,8 +26,8 @@ module.exports = {
     "watchOptions": {
         "ignoreInitial": true
     },
-    // "server": './src/',
-    "proxy": 'loc.aq-html.jp',
+    "server": './src/',
+    // "proxy": 'local',
     "port": 3000,
     "middleware": false,
     "serveStatic": [],
