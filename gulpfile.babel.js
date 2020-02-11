@@ -29,7 +29,6 @@ const documentRoot = env === 'production' ? './htdocs/' : './src/';
 * @desc pugをトランスパイルするタスク
 */
 gulp.task('pug', ()=>{
-  console.log(documentRoot);
 	return gulp.src([`${documentRoot}**/*.pug`,`!${documentRoot}**/_*.pug`])
   .pipe(plumber())
   .pipe(data((file)=>{
