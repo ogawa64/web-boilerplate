@@ -3,11 +3,12 @@
 プロジェクトに応じてカスタマイズして使用してください。
 
 ## 更新
-update | message | name  
-2019-0418 | init | S.Ogawa  
-2019-0708 | 各種説明を追記 | S.Ogawa
-2020-0210 | buildタスクに`purgecss`を追加 | S.Ogawa
-2020-0211 | stylus から sassに変更 | S.Ogawa
+| update | message | name |  
+|---|---|---|  
+| 2019-0418 | init | S.Ogawa|  
+| 2019-0708 | 各種説明を追記 | S.Ogawa |   
+| 2020-0210 | buildタスクに`purgecss`を追加 | S.Ogawa |  
+| 2020-0211 | stylus から sassに変更 | S.Ogawa |  
 
 ## リポジトリ  
 `プロジェクトのリポジトリのURL`  
