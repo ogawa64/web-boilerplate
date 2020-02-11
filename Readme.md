@@ -7,6 +7,7 @@ update | message | name
 2019-0418 | init | S.Ogawa  
 2019-0708 | 各種説明を追記 | S.Ogawa
 2020-0210 | buildタスクに`purgecss`を追加 | S.Ogawa
+2020-0211 | stylus から sassに変更 | S.Ogawa
 
 ## リポジトリ  
 `プロジェクトのリポジトリのURL`  
@@ -15,12 +16,16 @@ update | message | name
 `master`  
 パッケージ版です。  
 
-`dev-nunjukcs`  
-テンプレートエンジンがNunjucksのバージョンです。  
-
 ## Version
 `node v10.15.3`  
 `yarn 1.15.2`  
+
+## rerease version
+* rerease-ver1.0-  
+初回リリース  
+
+* rerease-ver1.1-  
+sass版  
 
 ## 開発コマンド
 予め" node.js "," yarn "をインストールしてください。  
