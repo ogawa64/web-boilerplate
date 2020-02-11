@@ -23,19 +23,14 @@ sass.compiler = require('node-sass');
 * @param documentRoot ドキュメントルートディレクトリ ./src, ./htdocs
 */
 const env = process.env.NODE_ENV;
-const d = (()=>{
-	if(env === 'development') return './src/';
-	else if(env === 'production') return './htdocs/';
-  else return './src/';
-});
-const documentRoot = d();
-
+const documentRoot = env === 'production' ? './htdocs/' : './src/';
 
 /**
 * @desc pugをトランスパイルするタスク
 */
 gulp.task('pug', ()=>{
-	return gulp.src([`./${documentRoot}**/*.pug','!./${documentRoot}**/_*.pug`])
+  console.log(documentRoot);
+	return gulp.src([`${documentRoot}**/*.pug`,`!${documentRoot}**/_*.pug`])
   .pipe(plumber())
   .pipe(data((file)=>{
 		const metaData = require('./src/common/template/config/page.json');
@@ -55,7 +50,7 @@ gulp.task('pug', ()=>{
 * @desc stylusをコンパイルするタスク
 */
 // gulp.task('stylus',() => {
-//   return gulp.src([`./${documentRoot}**/*.styl','!./${documentRoot}**/_*.styl`])
+//   return gulp.src([`${documentRoot}**/*.styl','!${documentRoot}**/_*.styl`])
 //   .pipe(plumber())
 //   .pipe(sourcemaps.init())
 //   .pipe(stylus({
@@ -71,8 +66,8 @@ gulp.task('pug', ()=>{
 */
 gulp.task('sass',() => {
   return gulp.src([
-    `./${documentRoot}**/*.sass`,`!./${documentRoot}**/_*.sass`,
-    `./${documentRoot}**/*.scss`,`!./${documentRoot}**/_*.scss`
+    `${documentRoot}**/*.sass`,`!${documentRoot}**/_*.sass`,
+    `${documentRoot}**/*.scss`,`!${documentRoot}**/_*.scss`
   ])
   .pipe(plumber())
   .pipe(sassGlob())
