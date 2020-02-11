@@ -63,14 +63,14 @@ HTMLのモジュールパーツを定義（ヘッダーなど）
 
 
 - CSS  
-CSSの開発はstylusを採用  
-・[src/common/css/preprocessor/base](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/tree/master/src/common/css/stylus/base)  
+CSSの開発はsassを採用  
+・[src/common/css/preprocessor/base](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/tree/master/src/common/css/sass/base)  
 ベースのスタイルを定義（リセットスタイルなど）  
-・[src/common/css/stylus/modules](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/tree/master/src/common/css/stylus/modules)  
+・[src/common/css/sass/modules](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/tree/master/src/common/css/sass/modules)  
 モジュール毎のスタイルを定義（ヘッダーなど）  
-・[src/common/css/stylus/pages](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/tree/master/src/common/css/stylus/pages)  
+・[src/common/css/sass/pages](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/tree/master/src/common/css/sass/pages)  
 ページ毎のスタイルを定義（トップページなど）  
-・[src/common/css/stylus/settings](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/tree/master/src/common/css/stylus/settings)  
+・[src/common/css/sass/settings](http://gitlab.aquaring.jp/Aquaring/aq-html-boilerplate/tree/master/src/common/css/sass/settings)  
 各種設定を定義（変数など）  
 
 
