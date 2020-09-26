@@ -2,114 +2,58 @@
 フロントエンドのwebサイト構築用のHTMLテンプレートです。
 プロジェクトに応じてカスタマイズして使用してください。
 
-## 更新
-| update | message | name |  
-|---|---|---|  
-| 2019-0418 | init | S.Ogawa|  
-| 2019-0708 | 各種説明を追記 | S.Ogawa |   
-| 2020-0210 | buildタスクに`purgecss`を追加 | S.Ogawa |  
-| 2020-0211 | stylus から sassに変更 | S.Ogawa |  
-
 ## リポジトリ  
-`プロジェクトのリポジトリのURL`  
-
-**ブランチ**  
-`master`  
-パッケージ版です。  
+`プロジェクトのリポジトリのURL`    
 
 ## Version
 `node v10.15.3`  
 `yarn 1.15.2`  
 
-## rerease version
-* rerease-ver1.0-  
-初回リリース  
-
-* rerease-ver1.1-  
-sass版  
 
 ## 開発コマンド
 予め" node.js "," yarn "をインストールしてください。  
-[node.js (windows)](https://qiita.com/satoyan419/items/56e0b5f35912b9374305)  
-[node.js (mac)](https://qiita.com/ucan-lab/items/517ee13a2f8769ab866c)  
-[yarn](https://yarnpkg.com/ja/docs/install#windows-stable)  
 
 ### インストール  
 `yarn install`  
 必要なパッケージがインストールされます。  
-詳細はpackage.jsonをご確認ください。  
 
 ### 開発  
 `yarn dev`  
-ローカルサーバが立ち上がります。  
+ローカルサーバが立ち上がります。
 各種開発ファイルの保存を監視してリロードします。  
 
 ***-初回のみ***  
-`yarn dev`コマンド中に/common/template/layout/\_layout.pug,/common/css/preprocesser/index.styl,/common/js/entries/index.jsファイルをそれぞれ保存してください。   
-
-- HTML  
-HTMLの開発はpugを採用  
-・src/common/template/config/site.json  
-
-サイト共通のデータを定義（ホストネームなど）  
-・src/common/template/config/page.json  
-
-ページごとのデータを定義（メタ情報など）  
-・src/common/template/layout/_layout.json  
-
-HTMLのテンプレート構造を定義  
-・src/common/template/module  
-HTMLのモジュールパーツを定義（ヘッダーなど）  
+`yarn dev`コマンド中に下記ファイルをそれぞれ保存してください。
+- /common/template/layout/\_layout.pug,
+- /common/css/preprocesser/index.styl,
+- /common/js/entries/index.js
 
 
-- CSS  
-CSSの開発はsassを採用  
-・src/common/css/preprocessor/base  
-ベースのスタイルを定義（リセットスタイルなど）  
-・src/common/css/sass/modules  
-モジュール毎のスタイルを定義（ヘッダーなど）  
-・src/common/css/sass/pages  
-ページ毎のスタイルを定義（トップページなど）  
-・src/common/css/sass/settings  
-各種設定を定義（変数など）  
+ファイル構成  
+サイト共通のデータを定義（ホストネームなど） 
+src/common/template/config/site.json  
 
+ページごとのデータを定義（メタ情報など）   
+src/common/template/config/page.json  
 
-- JS  
-JSはwebpackでバンドルしています。babelを採用しているのでES6以降の記述にも対応  
-・src/common/js/entries  
-webpackのエントリーポイントとなるのファイルを管理  
-・src/common/js/module  
-jsのモジュールを定義  
-
-**ビルド(サーバにアップするファイルを生成します)**  
+## ビルド(サーバにアップするファイルを生成します)  
 `yarn build`  
 htdocsディレクトリにコンパイルされたファイルが生成されます。  
-・stylusのコンパイルCSSのオートプレフィックス、圧縮、未使用セレクタの削除  
-・jsのバンドル、圧縮  
-・画像ファイルの自動圧縮  
-詳細はpackage.jsonをご確認ください。  
+コンパイルには下記のタスクが含まれます。
+- stylusのコンパイルCSSのオートプレフィックス、圧縮、未使用セレクタのCSS排除  
+- jsのバンドル、圧縮  
+- 画像ファイルの自動圧縮  
 
 
 ## 説明  
 **src**  
 開発用ディレクトリです。ローカルサーバのドキュメントルートディレクトリには、こちらを設定してください。  
-(`yarn dev`コマンドで立ち上がるローカルサーバはこのディレクトリがドキュメントルートに設定されています。詳しくはconfig/bs-config.jsをご確認ください)  
+(`yarn dev`コマンドで立ち上がるローカルサーバはこのディレクトリがドキュメントルートに設定されています。  
+詳しくはconfig/bs-config.jsをご確認ください)
 
 **htdocs**  
-納品用ディレクトリです。`yarn build` コマンドでこのディレクトリにデプロイ用ファイルが生成されます。
-
+ビルド用ディレクトリです。
+`yarn build` コマンドでこのディレクトリにデプロイ用ファイルが生成されます。
 
 **config**  
 各種設定ファイルが格納してあります。  
-
-**.editorconfig**  
-EditorConfigは、さまざまなエディターやIDEにまたがって同じプロジェクトに取り組んでいる複数の開発者にとって、一貫したコーディングスタイルを維持するのに役立ちます。 EditorConfigプロジェクトは、コーディングスタイルを定義するためのファイルフォーマットと、エディタがファイルフォーマットを読み、定義されたスタイルを順守できるようにするテキストエディタプラグインのコレクションから構成されています。 EditorConfigファイルは読みやすく、バージョン管理システムとうまく機能します。  
-
-**[.gitignore](https://git-scm.com/docs/gitignore)**  
-gitignoreファイルはGitが無視すべき意図的に追跡されていないファイルを指定します。 Gitによって既に追跡されているファイルは影響を受けません。  
-
-**.gulpfile.babel.js**  
-gulpのタスクの設定ファイルです。  
-
-**package.json**  
-各パッケージの依存関係やスクリプトを記載してあるJSONファイルです。  
