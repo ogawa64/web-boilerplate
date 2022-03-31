@@ -76,7 +76,7 @@
     "imagemin": "^6.1.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "5.0.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "object-fit-images": "^3.2.4",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.1",
